@@ -6,6 +6,7 @@ type FlexProps = {
     justify?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around',
     align?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline',
     children?: any,
+    shrink?: number,
     wrap?: boolean,
     style?: any
 }
@@ -16,6 +17,7 @@ const Flex = ({
     justify = 'flex-start',
     align = 'stretch',
     wrap = false,
+    shrink = 1,
     style,
     ...props
 }: FlexProps) => {
@@ -26,6 +28,7 @@ const Flex = ({
         justifyContent: justify as any,
         alignItems: align as any,
         flexWrap: (wrap? 'wrap' : 'nowrap') as any,
+        shrink: shrink as any
      })
 
     return (

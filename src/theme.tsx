@@ -19,6 +19,7 @@ const theme = {
       bold: '700',
     },
     gap: {
+      base: 1,
       xs: 5,
       s: 10,
       m: 20,

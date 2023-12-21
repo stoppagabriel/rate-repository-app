@@ -1,8 +1,9 @@
-import { StyleSheet, View  } from "react-native";
+import { Dimensions, StyleSheet, View  } from "react-native";
 import RepositoryList from "./RepositoryList";
 import React from "react";
 import { Navbar } from "./Navbar";
 import theme from "../theme";
+import Flex from "./Flex";
 
 const repositories = [
     {
@@ -75,17 +76,18 @@ const repositories = [
 
   const styles = StyleSheet.create({
     mainContainer: {
-      backgroundColor: theme.colors.mainBg
+      backgroundColor: theme.colors.mainBg,
+      flex: 1,
     }
   })
 
 
 const Main = () => {
     return (
-        <View style={styles.mainContainer}>
+        <Flex style={styles.mainContainer} direction={'col'}>
             <Navbar />
             <RepositoryList repositories={repositories} />
-        </View>
+        </Flex>
     )
 }
 

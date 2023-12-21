@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import Main from './src/components/Main';
+import Flex from './src/components/Flex';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <Flex style={styles.container}>
       <Main />
       <StatusBar style="auto" />
-    </View>
+    </Flex>
   );
 }
 

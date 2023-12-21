@@ -1,6 +1,5 @@
 import Flex from "./Flex"
-import { Pressable, StatusBar, StyleSheet } from "react-native"
-import Text from "./Text"
+import { StatusBar, StyleSheet } from "react-native"
 import theme from "../theme"
 import { NavbarTab } from "./NavbarTab"
 
@@ -8,15 +7,14 @@ const styles = StyleSheet.create({
     navbarContainer: {
         padding: 10,
         paddingTop: StatusBar.currentHeight + 20,
-        borderBottomColor: 'red',
-        borderBottomWidth: 1,
-        color: 'red',
+        borderBottomColor: theme.colors.mainBg,
+        borderBottomWidth: 3,
         backgroundColor: theme.colors.navBar
     }
 })
 export const Navbar = () => {
     return (
-        <Flex style={styles.navbarContainer} gap={10}>
+        <Flex style={styles.navbarContainer} gap={theme.gap.s}>
             <NavbarTab>
                 Repositories
             </NavbarTab>
