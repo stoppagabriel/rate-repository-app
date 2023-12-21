@@ -1,7 +1,8 @@
-import { Platform, StatusBar, StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View  } from "react-native";
 import RepositoryList from "./RepositoryList";
 import React from "react";
 import { Navbar } from "./Navbar";
+import theme from "../theme";
 
 const repositories = [
     {
@@ -72,10 +73,16 @@ const repositories = [
       },
   ];
 
+  const styles = StyleSheet.create({
+    mainContainer: {
+      backgroundColor: theme.colors.mainBg
+    }
+  })
+
 
 const Main = () => {
     return (
-        <View style={{ backgroundColor: 'lightgrey' }}>
+        <View style={styles.mainContainer}>
             <Navbar />
             <RepositoryList repositories={repositories} />
         </View>
