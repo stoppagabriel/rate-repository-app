@@ -17,7 +17,7 @@ const Flex = ({
     justify = 'flex-start',
     align = 'stretch',
     wrap = false,
-    shrink = 1,
+    shrink = 0,
     style,
     ...props
 }: FlexProps) => {
@@ -28,7 +28,8 @@ const Flex = ({
         justifyContent: justify as any,
         alignItems: align as any,
         flexWrap: (wrap? 'wrap' : 'nowrap') as any,
-        shrink: shrink as any
+        flexShrink: shrink as any,
+        flexGrow: 1 as any
      })
 
     return (

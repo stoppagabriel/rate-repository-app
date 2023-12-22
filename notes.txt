@@ -1,0 +1,8 @@
+- The property "flex: 1" is very important for defining sizes
+- Make the body container and the main container flex: 1 to have both full sized on the screen
+- Add "flex: 1" to text parent element to avoid overflow
+- Instale react-router-native para routing
+- Formik é útil para formulários (é uma biblioteca)
+- Use <Flex> se quiser ocupar a tela toda (esse seria um componente customizado)
+- Use <View> junto com <Flex> para modular o layout 
+- Use yup (biblioteca para validação de formulários)

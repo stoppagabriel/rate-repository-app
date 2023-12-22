@@ -4,6 +4,8 @@ import React from "react";
 import { Navbar } from "./Navbar";
 import theme from "../theme";
 import Flex from "./Flex";
+import { Navigate, Route, Routes } from "react-router-native";
+import { SignIn } from "../views/SignIn";
 
 const repositories = [
     {
@@ -86,7 +88,11 @@ const Main = () => {
     return (
         <Flex style={styles.mainContainer} direction={'col'}>
             <Navbar />
-            <RepositoryList repositories={repositories} />
+            <Routes>
+              <Route path="/" element={<RepositoryList repositories={repositories} />} />
+              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/sign" element={<SignIn />} />
+            </Routes>
         </Flex>
     )
 }
