@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, View  } from "react-native";
+import { StyleSheet } from "react-native";
 import RepositoryList from "./RepositoryList";
 import React from "react";
 import { Navbar } from "./Navbar";

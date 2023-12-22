@@ -1,9 +1,9 @@
 import { Image, StyleSheet } from "react-native"
-import { Repository } from "../types/_types";
-import Flex from "./Flex";
-import Text from "./Text";
-import theme from "../theme";
-import Tag from "./Tag";
+import { Repository } from "../../types/_types";
+import Flex from "../Flex";
+import Text from "../Text";
+import theme from "../../theme";
+import Tag from "../Tag";
 import { RepoStatistic } from "./RepoStatistic";
 
 const styles = StyleSheet.create({

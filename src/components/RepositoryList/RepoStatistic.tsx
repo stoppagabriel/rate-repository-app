@@ -1,6 +1,6 @@
-import theme from "../theme";
-import Flex from "./Flex";
-import Text from "./Text";
+import theme from "../../theme";
+import Flex from "../Flex";
+import Text from "../Text";
 
 const shortenValue = (value: number): string => {
     if(value >= 1000) {

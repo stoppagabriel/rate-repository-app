@@ -1,8 +1,8 @@
 import React from "react";
 import { FlatList, StyleSheet, View } from "react-native"
 import RepositoryItem from "./RepositoryItem";
-import useRepositories from "../hooks/useRepositories";
-import Loading from "./Loading";
+import useRepositories from "../../hooks/useRepositories";
+import Loading from "../Loading";
 
 const styles = StyleSheet.create({
     separator: {
