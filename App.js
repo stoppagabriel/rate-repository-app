@@ -3,12 +3,18 @@ import { Alert, Pressable, StyleSheet, Text, TextInput, View } from 'react-nativ
 import Main from './src/components/Main';
 import Flex from './src/components/Flex';
 import { NativeRouter } from 'react-router-native';
+import { ApolloProvider } from '@apollo/client';
+import createApolloClient from './src/utils/apolloClient';
+
+const apolloClient = createApolloClient();
 
 export default function App() {
   return (
     <Flex style={styles.container}>
       <NativeRouter>
-        <Main />
+        <ApolloProvider client={apolloClient}>
+          <Main />
+        </ApolloProvider>
       </NativeRouter>
       <StatusBar style="auto" />
     </Flex>

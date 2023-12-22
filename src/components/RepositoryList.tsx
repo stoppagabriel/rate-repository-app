@@ -2,8 +2,6 @@ import React from "react";
 import { FlatList, StyleSheet, View } from "react-native"
 import RepositoryItem from "./RepositoryItem";
 import useRepositories from "../hooks/useRepositories";
-import Text from "./Text";
-import Flex from "./Flex";
 import Loading from "./Loading";
 
 const styles = StyleSheet.create({
@@ -12,7 +10,7 @@ const styles = StyleSheet.create({
     },
 });
 
-const ItemSeparator = ()=> <View style={styles.separator} />
+const ItemSeparator = () => <View style={styles.separator} />
 
 const RepositoryList = () => {
     const { repositoriesNodes, loading } = useRepositories()
