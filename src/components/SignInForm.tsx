@@ -6,6 +6,9 @@ import FormikTextInput from "./FormikTextInput";
 import theme from "../theme";
 import React, { useState } from "react";
 import * as yup from 'yup';
+import { Credentials, useSignIn } from "../hooks/useSignIn";
+import AuthStorage from "../utils/authStorage";
+import { useNavigate } from "react-router-native";
 
 const initialValues = {
     username: '',
@@ -57,8 +60,16 @@ const validationSchema = yup.object().shape({
 })
 
 const SignInWrapper = () => {
-    const onSubmit = (values: any) => {
-        Alert.alert(JSON.stringify(values))
+    const [signIn] = useSignIn() as any;
+    const navigate = useNavigate();
+
+    const onSubmit = async (credentials: Credentials) => {
+        try {
+            await signIn(credentials);
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (

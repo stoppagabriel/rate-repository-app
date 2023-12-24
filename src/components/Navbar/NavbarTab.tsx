@@ -1,5 +1,5 @@
 import Text from "../Text";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import { Link } from "react-router-native";
 import theme from "../../theme";
 
@@ -10,18 +10,31 @@ const styles = StyleSheet.create({
 })
 
 type NavbarTabProps = {
-    children?: any
+    children?: any;
     link?: string;
+    [key: string]: any;
 }
 
 export const NavbarTab = ({
     children,
-    link = '/',
+    link,
     ...props
 }: NavbarTabProps) => {
-    return (
-        <Link to={link} style={styles.itemContainer}>
-            <Text color={'textLight'} { ...props }>{ children }</Text>
-        </Link>
-    )
+
+    const getTabContent = () => {
+        if(link) {
+            return (
+                <Link to={link} style={styles.itemContainer}>
+                    <Text color={'textLight'} { ...props }>{ children }</Text>
+                </Link>
+            )
+        }
+
+        return (
+            <Pressable { ...props }>
+                 <Text color={'textLight'}>{ children }</Text>
+            </Pressable> 
+        )
+    }
+    return getTabContent();
 }

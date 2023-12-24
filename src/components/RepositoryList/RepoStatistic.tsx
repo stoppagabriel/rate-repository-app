@@ -7,7 +7,7 @@ const shortenValue = (value: number): string => {
         return `${(value / 1000).toFixed(1)}k`
     }
 
-    return value.toString();
+    return value?.toString();
 }
 
 type RepoStatisticProps = {
@@ -18,7 +18,7 @@ type RepoStatisticProps = {
 export const RepoStatistic = (
     { name, value, shouldShortenValue = false }: RepoStatisticProps  
 ) => {
-    const valueToBeDisplayed = shouldShortenValue ? shortenValue(value) : value.toString();
+    const valueToBeDisplayed = shouldShortenValue ? shortenValue(value) : value?.toString();
 
     return (
         <Flex direction={'col'} align={'center'} gap={theme.gap.base}>
